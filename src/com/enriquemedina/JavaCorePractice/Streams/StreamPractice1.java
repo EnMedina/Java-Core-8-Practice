@@ -39,11 +39,16 @@ public class StreamPractice1 {
 		};
 		
 		return l.stream().max(c).get();
-		
+	}
+	
+	public int sumAndReduce(List<Integer> list) {
+		Stream<Integer> stream = list.stream();
+		return stream.reduce(0, (t,n) -> t +n);
 
 	}
 	
-	
-	
-	
+	public List<String> getNamesKidsOver18(List<Person> l){
+		return l.stream().filter(p -> p.getAge() >= 18).map(Person::getName).collect(Collectors.toList());
+	}
 }
+
