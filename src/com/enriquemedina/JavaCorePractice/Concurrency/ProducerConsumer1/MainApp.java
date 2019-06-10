@@ -7,7 +7,7 @@ public class MainApp {
 	public static void main(String[] args) {
 		BlockingQueue<String> q = new LinkedBlockingDeque<>();
 		
-		Producer p = new Producer(q);
+		Producer p = new Producer(q, 10);
 		Consumer c = new Consumer(q);
 		
 		Thread t1 = new Thread(p,"Producer");
